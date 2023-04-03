@@ -1,0 +1,53 @@
+<div class="my-4">
+  <form (ngSubmit)="busqueda()" autocomplete="off" >
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Buscar</label>
+    <input type="text" placeholder="Buscar..." name="search" [(ngModel)]="search"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  </form>
+</div>
+
+<hr>
+
+<div *ngIf="error"
+class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+</div>
+
+
+<div class="relative overflow-x-auto">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                  Pais
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Bandera
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Poblacion
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Acciones
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let pais of paises">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Apple MacBook Pro 17"
+              </th>
+              <td class="px-6 py-4">
+                  Silver
+              </td>
+              <td class="px-6 py-4">
+                  Laptop
+              </td>
+              <td>
+
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
